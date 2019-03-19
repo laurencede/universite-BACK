@@ -11,7 +11,7 @@
 	<groupId>fr.laurence.universite</groupId>
 	<artifactId>universte-back-laurence</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>universte-back</name>
+	<name>universte-back-laurence</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
