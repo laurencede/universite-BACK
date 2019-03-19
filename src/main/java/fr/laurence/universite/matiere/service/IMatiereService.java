@@ -13,4 +13,6 @@ public interface IMatiereService {
 	public Matieres save(Matieres validerMatiere);
 	
 	public Matieres saveModif(Matieres modifMatiere);
+	
+	public void supprimer(Integer id);
 }

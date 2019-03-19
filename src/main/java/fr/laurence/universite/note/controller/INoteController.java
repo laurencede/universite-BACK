@@ -1,15 +1,12 @@
-package fr.laurence.universite.note.service;
+package fr.laurence.universite.note.controller;
 
 import java.util.List;
 
 import fr.laurence.universite.note.domain.Note;
 
-public interface INoteService {
+public interface INoteController {
 
 	public List<Note> findAll();
-	
-	public Note save(Note note);
-	
 	public Note findOne(Integer idEtudiant, Integer idMatiere);
-
+	public Note save(Note note);
 }

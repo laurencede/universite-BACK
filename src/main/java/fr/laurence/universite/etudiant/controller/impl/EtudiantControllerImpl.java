@@ -2,12 +2,15 @@ package fr.laurence.universite.etudiant.controller.impl;
 
 import java.util.List;
 
+import org.hibernate.annotations.UpdateTimestamp;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -42,6 +45,20 @@ public class EtudiantControllerImpl implements IEtudiantController{
 	public Etudiants save(@RequestBody Etudiants etudiant) {
 		Etudiants et = etudiantService.ajouterEtudiant(etudiant);
 		return et;
+	}
+
+	@Override
+	@DeleteMapping("/etudiants/{id}")
+	public void delete(@PathVariable Integer id) {
+		etudiantService.supprimer(id);		
+	}
+
+	@Override
+	@PutMapping("/etudiants/{id}")
+	public Etudiants update(@RequestBody Etudiants etudiant, @PathVariable Integer id) {
+		etudiant.setId(id);
+		Etudiants e = etudiantService.modifierEtudiant(etudiant);
+		return e;
 	}
 
 }

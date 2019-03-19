@@ -10,11 +10,14 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import fr.laurence.universite.etudiant.domain.Etudiants;
 import fr.laurence.universite.matiere.domain.Matieres;
 
 @Entity
 @Table(name="T_NOTE")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Note implements Serializable {
 	
 	@EmbeddedId

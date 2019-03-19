@@ -39,6 +39,12 @@ public class MatiereServiceImpl implements IMatiereService{
 			return saveModif;
 		}
 
+		@Override
+		public void supprimer(Integer id) {
+			imr.deleteById(id);
+			
+		}
+
 
 		
 		

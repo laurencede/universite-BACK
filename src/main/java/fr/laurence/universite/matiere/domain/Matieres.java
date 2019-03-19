@@ -13,6 +13,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import fr.laurence.universite.enseignant.domain.Enseignant;
@@ -41,6 +42,7 @@ public class Matieres implements Serializable {
 	@JoinColumn(name="ID_ENSEIGNANT")
 	private Enseignant enseignant; 
 	
+	@JsonIgnore
 	@OneToMany(mappedBy="matiere")
 	private List<Note> notes;
 	

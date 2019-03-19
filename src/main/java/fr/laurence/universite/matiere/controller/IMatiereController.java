@@ -9,4 +9,6 @@ public interface IMatiereController {
 	public List<Matieres> findAll();
 	public Matieres findOne(Integer id);
 	public Matieres save(Matieres matiere);
+	public void delete(Integer id);
+	public Matieres update(Matieres matiere, Integer id);
 }
